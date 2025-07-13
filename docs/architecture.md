@@ -1,11 +1,10 @@
 # 🛡️ AutoShield Architecture
 
-AutoShield is an **AWS Cloud Security Automation tool** designed to:
-
-* **Scan** cloud infrastructure for misconfigurations
-* **Apply Auto-Fixes** for common vulnerabilities
-* **Validate** changes with post-fix testing
-* **Report** results on a real-time dashboard
+AutoShield is an **AWS Cloud Security Automation tool** designed to:  
+- **Scan** cloud infrastructure for misconfigurations  
+- **Apply Auto-Fixes** for common vulnerabilities  
+- **Validate** changes with post-fix testing  
+- **Report** results on a real-time dashboard  
 
 This document outlines the architecture and workflow of AutoShield.
 
@@ -15,14 +14,14 @@ This document outlines the architecture and workflow of AutoShield.
 
 ```mermaid
 flowchart TD
-    subgraph AWS Cloud
+    subgraph AWS_Cloud
         A[S3 Buckets] -->|Scan| B1
         B[EC2 Instances] -->|Scan| B1
         C[IAM Policies] -->|Scan| B1
         D[VPC Configurations] -->|Scan| B1
     end
 
-    subgraph Backend API (Node.js)
+    subgraph Backend_API_Node
         B1[Scan Cloud Infrastructure]
         B1 --> C1[Detect Misconfigurations]
         C1 --> D1[Apply Auto-Fix Rules]
@@ -30,19 +29,19 @@ flowchart TD
         E1 --> F1[Save Results to Database]
     end
 
-    subgraph Database (MongoDB)
+    subgraph Database_MongoDB
         F1 --> G1[Audit Logs]
         F1 --> G2[Scan Reports]
     end
 
-    subgraph Frontend Dashboard (Next.js)
+    subgraph Frontend_Dashboard_Next
         H1[User Dashboard]
         H1 -->|Fetch Reports| G2
         H1 -->|View Logs| G1
     end
 
     H1 -->|Send API Requests| B1
-```
+
 
 ---
 
