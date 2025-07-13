@@ -1,10 +1,11 @@
 # 🛡️ AutoShield Architecture
 
-AutoShield is an **AWS Cloud Security Automation tool** designed to:  
-- **Scan** cloud infrastructure for misconfigurations  
-- **Apply Auto-Fixes** for common vulnerabilities  
-- **Validate** changes with post-fix testing  
-- **Report** results on a real-time dashboard  
+AutoShield is an **AWS Cloud Security Automation tool** designed to:
+
+* **Scan** cloud infrastructure for misconfigurations
+* **Apply Auto-Fixes** for common vulnerabilities
+* **Validate** changes with post-fix testing
+* **Report** results on a real-time dashboard
 
 This document outlines the architecture and workflow of AutoShield.
 
@@ -42,6 +43,7 @@ flowchart TD
 
     H1 -->|Send API Requests| B1
 
+```
 
 ---
 
